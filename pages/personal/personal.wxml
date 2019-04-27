@@ -1,0 +1,14 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+  <view class="self-info-wrapper">
+    <view class="self-left">
+      <view class="self-head">
+        <image src="../../images/icon/head.png" />
+      </view>
+      <view class="self-title">我的信息</view>
+    </view>
+    <view class="self-right">编辑/查看个人资料></view>
+  </view>
+  <redirect-list list="{{cardList}}" class="mb-20"></redirect-list>
+  <redirect-list list="{{othList}}"></redirect-list>
+</view>

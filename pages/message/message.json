@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "redirect-item": "../../components/redirect-item/redirect-item",
+    "redirect-list": "../../components/redirect-list/redirect-list"
+  }
+}

@@ -1,0 +1,13 @@
+<!--components/reirect-list/redirect-list.wxml-->
+<view class="redirect-list-wrapper">
+  <block wx:for="{{list}}"
+         wx:for-index="index"
+         wx:key="{{index}}"
+         wx:for-item="item">
+    <redirect-item label="{{item.label}}"
+                   to="{{item.to}}"
+                   iconImageUrl="{{item.iconImageUrl}}"
+                   class="redirect-list-item">
+    </redirect-item>
+  </block>
+</view>

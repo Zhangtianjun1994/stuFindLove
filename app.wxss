@@ -1,0 +1,33 @@
+/**app.wxss**/
+page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  color: #5a5a5a;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: scroll;
+} 
+
+.mr-20 {
+  margin-right: 20rpx;
+}
+
+.mb-15 {
+  margin-bottom: 15rpx;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+.mb-25 {
+  margin-bottom: 25rpx;
+}

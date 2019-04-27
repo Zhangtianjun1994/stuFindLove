@@ -1,0 +1,14 @@
+<!--components/card-item/card-item.wxml-->
+ <view class="card-item">
+  <image src="{{imageUrl}}"
+          class="card-item-img"/>
+  <view class="card-item-info-name">
+    {{name}}
+  </view>
+  <view class="card-item-info-detail">
+    <view class="mr-20">{{gender === 1 ? "女" : "男"}}</view>
+    <view class="mr-20">{{city}}</view>
+    <view class="mr-20">{{birth}}</view>
+    <view class="mr-20">{{university}}</view>
+  </view>        
+</view>

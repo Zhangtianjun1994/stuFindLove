@@ -1,0 +1,9 @@
+/* pages/updates/updates.wxss */
+.container {
+  overflow: scroll;
+  padding: 30rpx 0;
+}
+
+.container .feed-item:not(:last-child) {
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,39 @@
+/* components/card-item/card-item.wxss */
+
+:host {
+  width: 100%;
+  display: block;
+}
+
+.card-item {
+  width: 100%;
+  background: #fff;
+  padding: 25rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.card-item:not(:last-child) {
+  margin-bottom: 10rpx;
+}
+
+.card-item .card-item-img {
+  width: 720rpx;
+  height: 412rpx;
+  margin-bottom: 15rpx;
+}
+
+.card-item .card-item-info-name {
+  color: #333;
+  font-size: 40rpx;
+  margin-bottom: 15rpx;
+}
+
+.card-item .card-item-info-detail {
+  display: flex;
+  font-size: 25rpx;
+  color: #5a5a5a;
+}
+
+.mr-20 {
+  margin-right: 20rpx;
+}

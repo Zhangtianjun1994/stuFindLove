@@ -1,0 +1,21 @@
+/* components/reirect-list/redirect-list.wxss */
+
+:host {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.redirect-list-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1rpx solid #ddd;
+}
+
+.redirect-list-wrapper .redirect-list-item {
+    display: block;
+}
+
+.redirect-list-wrapper .redirect-list-item:not(:last-child) {
+    border-bottom: 1rpx solid #f2f2f2;
+    margin-bottom: 1rpx;
+}

@@ -1,0 +1,4 @@
+<!--pages/message/message.wxml-->
+<view class="container">
+  <redirect-list list="{{typeList}}"></redirect-list>
+</view>

@@ -1,0 +1,8 @@
+<!--components/redirect-item/redirect-item.wxml-->
+<view class="redirect-item-wrapper" bindtap="handleTap">
+  <image class="redirect-item-icon"
+         src="{{iconImageUrl}}">
+  </image>
+  <view class="redirect-item-label">{{label}}</view>
+  <view class="redirect-item-arrow">></view>
+</view>

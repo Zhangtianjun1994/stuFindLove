@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/updates/updates",
+    "pages/personal/personal",
+    "pages/message/message",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/message-my-focus/message-my-focus",
+    "pages/user-info/user-info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#FF98C7",
+    "backgroundColor": "#f7f7f7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/updates/updates",
+        "iconPath": "images/icon/icon-updates-inactive.png",
+        "selectedIconPath": "images/icon/icon-updates-active.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "images/icon/icon-filter-inactive.png",
+        "selectedIconPath": "images/icon/icon-filter-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "images/icon/icon-message-inactive.png",
+        "selectedIconPath": "images/icon/icon-message-active.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "images/icon/icon-personal-inactive.png",
+        "selectedIconPath": "images/icon/icon-personal-active.png"
+      }
+    ]
+  }
+}
