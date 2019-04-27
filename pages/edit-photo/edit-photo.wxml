@@ -1,0 +1,5 @@
+<!--pages/edit-photo/edit-photo.wxml-->
+<view class="edit-photo-container">
+<image src="../../images/for-example/edit-img-exp.jpg"
+       class="photo" height="auto"/>
+</view>

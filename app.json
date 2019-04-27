@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/edit-photo/edit-photo",
     "pages/updates/updates",
     "pages/personal/personal",
     "pages/message/message",
