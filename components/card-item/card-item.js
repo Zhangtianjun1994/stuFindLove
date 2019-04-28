@@ -13,21 +13,25 @@ Component({
       value: ''
     },
     gender: { // 1 男性， 2 女性， 0 未知
-      type: Number,
-      value: 1
+      type: String,
+      value: ''
+    },
+    province: {
+      type: String,
+      value: ''
     },
     city: {
       type: String,
       value: ''
     },
-    birth: {
-      type: String,
-      value: ''
+    age: {
+      type: Number,
+      value: 1
     },
     university: {
       type: String,
       value: ''
-    }
+    },
   },
 
   /**

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -13,8 +13,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx9a8b91e50f34fca8",
-	"projectname": "lover-testing",
+	"appid": "wx114f04180b885f25",
+	"projectname": "stuFindLove",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

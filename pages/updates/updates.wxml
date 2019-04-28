@@ -1,19 +1,10 @@
 <!--pages/updates/updates.wxml-->
-<view class="container"
-      scroll-x="true"
-      scroll-top="100">
+<view class="container" scroll-x="true" scroll-top="100">
   <view class="feed-item-info-wrapper">
-    <block wx:for="{{list}}"
-           wx:for-index="index"
-           wx:for-item="item"
-           wx:key="item.id">
-      <card-item class="feed-item" 
-                 imageUrl="{{item.imageUrl}}"
-                 name="{{item.name}}"
-                 gender="{{item.gender}}"
-                 city="{{item.city}}"
-                 birth="{{item.birth}}"
-                 university="{{item.university}}"></card-item>
+    <block wx:for="{{update_user_list}}" wx:for-index="index" wx:for-item="item" wx:key="item.id">
+      <card-item class="feed-item" imageUrl="{{item.imageUrl}}" name="{{item.nickName}}" gender="{{item.sex}}" province="{{item.liveProvince}}" city="{{item.liveCity}}" age="{{item.age}}" university="{{item.school}}">
+      </card-item>
     </block>
   </view>
 </view>
+<view class=''>{{loadingTip}}</view>

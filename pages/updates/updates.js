@@ -1,94 +1,73 @@
 // pages/updates/updates.js
-const utils = require('../../utils/util.js')
-
+var that
+var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-      imageUrl: '../../images/updates/1500_900.jpg',
-      name: '李狠建',
-      city: '北京',
-      birth: '95年双子座',
-      university: '北京师范大学',
-      gender: 1,
-      id: 1
-    }, {
-      imageUrl: '../../images/updates/800_480.jpg',
-      name: '张和平',
-      city: '北京',
-      birth: '94年狮子座',
-      university: '北京大学',
-      gender: 1,
-      id: 2
-    }, {
-      imageUrl: '../../images/updates/500_300.jpg',
-      name: '刘建国',
-      city: '北京',
-      birth: '93年摩羯座',
-      university: '清华大学',
-      gender: 1,
-      id: 3
-    }]
+    //本用户的userId
+    selfUserId: '',
+    url: '',
+    update_user_list: [],
+    loadingTip: '没有更多信息了',
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onLoad: function() {
+    that = this;
+    that.setData({
+      url: app.globalData.baseUrl,
+      selfUserId:app.globalData.selfUserId
+      //selfUserId: app.globalData.selfUserId
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function() {
+    that = this;
+    that.getUpdateList();
   },
+  getUpdateList: function() {
+    wx.showToast({
+      title: '加载中...',
+      duration: 2000
+    })
+    var url = that.data.url
+    wx.request({
+      url: url + '/publishUser/queryYestoday',
+      method: 'get',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => {
+        var res = res.data
+        wx.hideToast();
+        if (res.code == 0) {
+          that.setData({
+            update_user_list: res.data,
+          });
+        }
+        //console.log("数据列表的长度："+that.data.publish_user_list.length)
+        if (res.data.length <= 0) {
+          that.setData({
+            loadingTip: '经过审核后会有更多信息偶',
+          });
+        }
+      },
+      error: function(error) {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    console.log(123)
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-  userInfoReadyCallback: function () {
-    console.log(12)
+  //显示信息详情
+  showDetail: function(e) {
+    console.log("点击进入详情")
+    var userId = that.data.publish_user_list[index].userId;
+    var id = that.data.publish_user_list[index].id;
+    var selfUserId = that.data.selfUserId
+    wx.navigateTo({
+      url:'',
+    });
   }
 })
