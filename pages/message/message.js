@@ -12,12 +12,7 @@ Page({
       to: '../message-my-focus/message-my-focus',
       label: '关注我的',
       iconImageUrl: '../../images/icon/icon-focus.png'
-    }, {
-      to: '../message-my-focus/message-my-focus',
-      label: '互相关注',
-      iconImageUrl: '../../images/icon/icon-focus.png'
     }],
-    a: 2
   },
 
   /**
