@@ -1,2 +1,59 @@
 <!--pages/user-info/user-info.wxml-->
-<text>pages/user-info/user-info.wxml</text>
+<view class="user-info-container">
+  <view class="info-wrapper">
+    <view class="main-info">
+      <text class="name">{{nickName}}</text>
+      <text class="gender">{{gender}}</text>
+    </view>
+    <view class="info-part">
+      <view class="title">个人信息</view>
+      <view class="content">
+        <view class="f-r oth-info">
+          <view class="height">{{height}}cm</view>
+          <view >{{birthday}}</view>
+          <view >{{constellation}}</view>
+        </view>
+        <view class="f-r oth-info">
+          <view class="school">{{school}}</view>
+          <view class="education">{{education}}</view>
+        </view>
+        <view class="f-r oth-info">
+          <view class="now-">现居 {{liveProvince}}-{{liveCity}}</view>
+        </view>
+        <view class="f-r oth-info">
+          <view class="hometown">来自 {{hometownProvince}}-{{hometownCity}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="info-part">
+      <view class="title">关于我</view>
+      <view class="content">{{selfIntroduction}}</view>
+    </view>
+    <view class="info-part">
+      <view class="title">我的爱好</view>
+      <view class="content">{{hobby}}</view>
+    </view>
+    <view class="info-part">
+      <view class="title">我的理想对象</view>
+      <view class="content">{{idealTa}}</view>
+    </view>
+    <view class="info-part">
+      <view class="title">我的照片</view>
+      <view class="content">
+        <swiper indicator-dots="{{true}}" 
+                autoplay="{{true}}"
+                interval="5000"
+                class="photo-swiper"
+                duration="500">
+          <block wx:for="{{imageUrls}}"
+                 wx:for-index="index"
+                 wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" width="200"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+</view>
