@@ -24,6 +24,20 @@ const error = (...args) => {
   debugConsole('error', ...args)
 }
 
+const getImageInfo = (src) => {
+  return new Promise((resolve, reject) => {
+    wx.getImageInfo({
+      src,
+      success: function (res) {
+        resolve(res)
+      },
+      fail: function (err) {
+        reject(err)
+      }
+    })
+  })
+}
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -42,9 +56,29 @@ const formatNumber = n => {
 
 const usingMock = false
 
+const baseUrl = 'https://www.gxtdlm.cn'
+
 const request = opt => {
   if (usingMock) {
     
+  } else {
+    return new Promise((resolve, reject) => {
+      let success = res => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          if (res.data.code === 0) {
+            resolve(res.data.data)
+          } else {
+            reject(res.data.data)
+          }
+        } else {
+          reject(res)
+        }
+      }
+      let fail = err => reject(err)
+      let url = baseUrl + opt.url
+      Object.assign(opt, {success, fail, url})
+      wx.request(opt)
+    })
   }
 }
 
@@ -55,5 +89,8 @@ module.exports = {
   log,
   error,
   info,
-  warn
+  warn,
+  getImageInfo,
+  baseUrl,
+  request
 }
