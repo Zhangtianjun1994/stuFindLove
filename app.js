@@ -6,7 +6,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    that = this,
+    that = this;
+    that.globalData.loginPending = true;
     // 登录
     wx.login({
         success: res => {
@@ -42,10 +43,18 @@ App({
                         console.log("通过openId获取到userId信息"+res.data.userId)
                         that.globalData.selfUserId = res.data.userId
                       }
+                      that.globalData.loginPending = false
+                      that.loginResolve()
+                    },
+                    fail: err => {
+                      that.globalData.loginPending = false
+                      that.loginResolve()
                     }
                   })
                 } else {
                   console.log('登陆/wechat/login地址失败')
+                  that.globalData.loginPending = false
+                  that.loginResolve()
                 }
               },
               fail: function() {
@@ -59,7 +68,7 @@ App({
         fail: function() {
           console.log('登陆失败')
         }
-      }),
+      })
 
       // 获取用户信息
       wx.getSetting({
@@ -88,7 +97,9 @@ App({
 
   },
   globalData: {
-    baseUrl: 'https://localhost',
+    baseUrl: 'https://www.gxtdlm.cn',
+    loginPending: true,
+    loginCallbacks: [],
     openId:'',
     selfUserId:'',
     userInfo:null,
@@ -103,5 +114,16 @@ App({
       province: ''
     },
     hasUserInfo: false
+  },
+  loginResolve (fn) {
+    if (this.globalData.pending) {
+      this.globalData.loginCallbacks.push(fn)
+    } else {
+      this.globalData.loginCallbacks.push(fn)
+      while (this.globalData.loginCallbacks.length > 0) {
+        let fn = this.globalData.loginCallbacks.pop()
+        typeof fn === 'function' && fn()
+      }
+    }
   }
 })
