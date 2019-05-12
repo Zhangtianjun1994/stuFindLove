@@ -1,6 +1,6 @@
 <!--pages/personal/personal.wxml-->
 <view class="container">
-  <view class="self-info-wrapper">
+  <view class="self-info-wrapper" bindtap="handleTap">
     <view class="self-left">
       <view class="self-head">
         <image src="../../images/icon/head.png" />

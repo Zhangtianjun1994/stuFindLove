@@ -1,6 +1,8 @@
 // pages/updates/updates.js
 var that
 var app = getApp()
+const util = require('../../utils/util')
+
 Page({
   /**
    * 页面的初始数据
@@ -67,16 +69,6 @@ Page({
       }
     })
   },
-  //显示信息详情
-  showDetail: function (e) {
-    console.log("点击进入详情")
-    var userId = that.data.all_user_list[index].userId;
-    var id = that.data.all_user_list[index].id;
-    var selfUserId = that.data.selfUserId
-    wx.navigateTo({
-      url: '',
-    });
-  },
   onPullDownRefresh: function () {
     console.log("实现下拉刷新-------")
     that.setData({
@@ -95,4 +87,12 @@ Page({
     });
     that.getUserList();
   },
+  clickCardItem (event) {
+    let userId = event.detail.userId
+    let id = event.detail.id
+    console.log(userId, id)
+    wx.navigateTo({
+      url: `../user-info/user-info?userId=${userId}&id=${id}`
+    })
+  }
 })

@@ -11,6 +11,7 @@ Page({
     url: '',
     update_user_list: [],
     loadingTip: '没有更多信息了',
+    isHiddenImageEditor: true
   },
   onLoad: function() {
     that = this;
@@ -61,13 +62,12 @@ Page({
     })
   },
   //显示信息详情
-  showDetail: function(e) {
-    console.log("点击进入详情")
-    var userId = that.data.publish_user_list[index].userId;
-    var id = that.data.publish_user_list[index].id;
-    var selfUserId = that.data.selfUserId
+  clickCardItem (event) {
+    let userId = event.detail.userId
+    let id = event.detail.id
+    console.log(userId, id)
     wx.navigateTo({
-      url:'',
-    });
+      url: `../user-info/user-info?userId=${userId}&id=${id}`
+    })
   }
 })

@@ -1,5 +1,6 @@
 <!--components/card-item/card-item.wxml-->
- <view class="card-item">
+ <view class="card-item"
+       bindtap="handleTap">
   <image src="{{imageUrl}}"
           class="card-item-img"/>
   <view class="card-item-info-name">
