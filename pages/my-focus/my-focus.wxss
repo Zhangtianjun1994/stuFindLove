@@ -1,0 +1,8 @@
+/* pages/my-focus/my-focus.wxss */
+.focus-list {
+  padding: 20rpx 0;
+}
+
+.focus-list .focus-item:not(:last-child) {
+  margin-bottom: 15rpx;
+}

@@ -1,0 +1,2 @@
+/* pages/focus-me/focus-me.wxss */
+@import '../my-focus/my-focus.wxss'
