@@ -19,6 +19,7 @@ Page({
       selfUserId:app.globalData.selfUserId
       //selfUserId: app.globalData.selfUserId
     })
+    console.log("update中selfUserId是什么："+app.globalData.selfUserId)
   },
 
   /**
