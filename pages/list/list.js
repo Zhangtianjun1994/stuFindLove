@@ -37,10 +37,6 @@ Page({
     that.getUserList();
   },
   getUserList: function () {
-    wx.showLoading({
-      title: '加载中...',
-      duration: 2000
-    })
     var pageIndex = that.data.pageIndex
     var pageSize = that.data.pageSize
     return util.request({
@@ -61,9 +57,6 @@ Page({
       },
       (err) => err
     )
-    .then(() => {
-      wx.hideLoading()
-    })
   },
   onPullDownRefresh: function () {
     console.log("实现下拉刷新-------")
@@ -86,7 +79,6 @@ Page({
   clickCardItem (event) {
     let userId = event.detail.userId
     let id = event.detail.id
-    console.log(userId, id)
     wx.navigateTo({
       url: `../user-info/user-info?userId=${userId}&id=${id}`
     })

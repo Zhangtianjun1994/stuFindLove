@@ -39,9 +39,6 @@ Page({
       this.setData({
         userId: userId
       })
-      util.request({
-        url: `/friends/myFocus?userId=${userId}`
-      })
       if (id !== undefined) {
         this.setData({
           id: id
@@ -59,14 +56,8 @@ Page({
       method: 'GET'
     })
     .then(data => {
-<<<<<<< HEAD
       this.setData({
         imageUrl: Array.isArray(data.imageUrl) ? data.imageUrl : [data.imageUrl],
-=======
-      console.log("getDetail result is "+JSON.stringify(data))
-      this.setData({
-        imageUrls: data.imageUrl,
->>>>>>> d7182d1173c376c9aac864a42f0d9d4891022bed
         id: data.id,
         education: data.education,
         hobby: data.hobby,

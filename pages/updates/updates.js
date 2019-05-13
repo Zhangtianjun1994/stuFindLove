@@ -34,10 +34,6 @@ Page({
     that.getUpdateList();
   },
   getUpdateList: function() {
-    wx.showLoading({
-      title: '加载中...',
-      duration: 2000
-    })
     util.request({
       url: '/publishUser/queryYestoday',
       method: 'get'
@@ -56,18 +52,11 @@ Page({
       },
       err => err
     )
-    .then(() => {
-      wx.hideLoading()
-    })
   },
   //显示信息详情
   clickCardItem (event) {
     let userId = event.detail.userId
     let id = event.detail.id
-<<<<<<< HEAD
-=======
-    console.log(userId+"  id is "+id)
->>>>>>> d7182d1173c376c9aac864a42f0d9d4891022bed
     wx.navigateTo({
       url: `../user-info/user-info?userId=${userId}&id=${id}`
     })
