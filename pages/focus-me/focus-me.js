@@ -1,5 +1,6 @@
 // pages/focus-me/focus-me.js
 const utils = require('../../utils/util')
+const app = getApp()
 const focusStateEnum = require('../../components/focus-item/focus-state-enum')
 
 Page({
@@ -8,18 +9,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    userId: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.loginResolve(() => {
+      let userId = app.globalData.selfUserId
+      this.setData({
+        userId
+      })
+      this.getData()
+    })
   },
 
   getData: function () {
     return utils.request({
-      url: '/friends/focusMe?userId=2213470209'
+      url: `/friends/focusMe?userId=${this.data.userId}`
     }).then((data) => {
       let list = []
       list = data.map((item) => {
@@ -34,11 +43,18 @@ Page({
     })
   },
 
+  clickFocusItem (event) {
+    let userId = event.detail.userId
+    let id = event.detail.id
+    wx.navigateTo({
+      url: `../user-info/user-info?userId=${userId}&id=${id}`
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getData()
   },
 
   /**

@@ -1,5 +1,6 @@
 // pages/my-focus/my-focus.js
 const utils = require('../../utils/util')
+const app = getApp()
 const focusStateEnum = require('../../components/focus-item/focus-state-enum')
 
 Page({
@@ -15,13 +16,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.loginResolve(() => {
+      let userId = app.globalData.selfUserId
+      console.log(userId, "?")
+
+      this.setData({
+        userId
+      })
+      this.getData()
+    })
   },
 
   getData: function () {
     return utils.request({
-      url: '/friends/myFocus?userId=2213470209'
+      url: `/friends/myFocus?userId=${this.data.userId}`
     }).then((data) => {
-      // data = [{"id":4,"userId":2213470209,"nickName":"丫丫","age":25,"aries":"摩羯座","sex":"女","height":165,"school":"大连理工大学","education":"硕士","liveProvince":"辽宁","liveCity":"大连市","heat":18,"imageUrl":["https://gxtdlm-1258532084.cos.ap-beijing.myqcloud.com/image/9a6eab5e22f742d128aa65c377a8e849be31e53d5cee2-W8V9c5_fw658.jpeg","https://gxtdlm-1258532084.cos.ap-beijing.myqcloud.com/image/106-161205161K5161.jpg"],"bothFocus":true},{"id":3,"userId":2213470209,"nickName":"丫丫","age":25,"aries":"摩羯座","sex":"女","height":165,"school":"大连理工大学","education":"硕士","liveProvince":"辽宁","liveCity":"大连市","heat":2,"imageUrl":["https://gxtdlm-1258532084.cos.ap-beijing.myqcloud.com/image/9a6eab5e22f742d128aa65c377a8e849be31e53d5cee2-W8V9c5_fw658.jpeg","https://gxtdlm-1258532084.cos.ap-beijing.myqcloud.com/image/106-161205161K5161.jpg"],"bothFocus":true}]
       let list = []
       list = data.map((item) => {
         let newItem = Object.assign({}, item)
@@ -35,11 +44,18 @@ Page({
     })
   },
 
+  clickFocusItem (event) {
+    let userId = event.detail.userId
+    let id = event.detail.id
+    wx.navigateTo({
+      url: `../user-info/user-info?userId=${userId}&id=${id}`
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getData()
   },
 
   /**

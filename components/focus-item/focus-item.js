@@ -77,6 +77,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleTapOutside (e) {
+      this.triggerEvent('click', {userId: this.data.userId, id: this.data.uid})
+    },
+    handleTapFocus (e) {
+      
+    }
   }
 })

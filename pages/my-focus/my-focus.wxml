@@ -19,7 +19,8 @@
                 height="{{item.height}}"
                 gender="{{item.sex}}"
                 age="{{item.age}}"
-                constellation="{{item.aries}}">
+                constellation="{{item.aries}}"
+                bind:click="clickFocusItem">
     </focus-item>
   </block>
 </view>

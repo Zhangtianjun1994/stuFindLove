@@ -1,5 +1,5 @@
 <!--components/focus-item/focus-item.wxml-->
-<view class="focus-item">
+<view class="focus-item" bindtap="handleTapOutside">
   <view class="head-img">
     <image src="{{imageSrc}}" />
   </view>
@@ -26,7 +26,7 @@
       <view class="">家乡 {{hometownProvince}}-{{hometownCity}}</view>
     </view>
   </view>
-  <view class="focus-status">
+  <view class="focus-status" catchtap="handleTapFocus">
     <block wx:if="{{focusStatus === focusStateEnum.IS_FOCUS}}">
       <image class="focus-icon" src="../../images/icon/icon-focus-already.png"></image>
       <view class="focus-label">已关注</view>
