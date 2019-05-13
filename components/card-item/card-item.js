@@ -1,4 +1,6 @@
 // components/card-item/card-item.js
+import util from '../../utils/util';
+
 Component({
   /**
    * 组件的属性列表
@@ -32,6 +34,14 @@ Component({
       type: String,
       value: ''
     },
+    userId: {
+      type: String || Number,
+      value: ''
+    },
+    uid: {
+      type: String || Number,
+      value: ''
+    }
   },
 
   /**
@@ -45,6 +55,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleTap () {
+      this.triggerEvent('click', {userId: this.data.userId, id: this.data.uid})
+    }
   }
 })

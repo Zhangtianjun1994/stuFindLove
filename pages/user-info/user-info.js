@@ -1,18 +1,76 @@
 // pages/user-info/user-info.js
+const app = getApp();
+
+const util = require('../../utils/util')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    nickName: '',
+    id: '',
+    isSelf: true,
+    userId: 123,
+    birthday: '--',
+    gender: '--',
+    height: '--',
+    school: '--',
+    education: '--',
+    liveProvince: '--',
+    liveCity: '--',
+    hometownProvince: '--',
+    hometownCity: '--',
+    hobby: '--',
+    selfIntroduction: '--',
+    idealTa: '--',
+    imageUrls: [],
+    constellation: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.loginResolve(() => {
+      let id = options.id
+      let userId = app.globalData.selfUserId
+      console.log(userId)
+      // this.setData({
+      //   userId: userId,
+      //   isSelf: userId === app.globalData.selfUserId
+      // })
+      this.getDetail(userId, id)
+    })
+  },
 
+  getDetail (userId, id) {
+    util.request({
+      url: `/publishUser/queryById?userId=${userId}&id=${id}`,
+      method: 'GET'
+    })
+    .then(data => {
+      console.log(data)
+      this.setData({
+        imageUrls: data.imageUrl.split(','),
+        id: data.id,
+        education: data.education,
+        hobby: data.hobby,
+        hometownCity: data.hometownCity,
+        hometownProvince: data.hometownProvince,
+        liveCity: data.liveCity,
+        liveProvince: data.liveProvince,
+        nickName: data.nickName,
+        selfIntroduction: data.selfIntroduction,
+        idealTa: data.idealTa,
+        gender: data.sex,
+        school: data.school,
+        birthday: data.birthday,
+        constellation: data.aries,
+        height: data.height
+      })
+    })
   },
 
   /**

@@ -1,1 +1,73 @@
 /* pages/user-info/user-info.wxss */
+
+.user-info-container {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.info-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 40rpx;
+  color: #555;
+}
+
+.info-part {
+  font-size: 30rpx;
+  color: #888;
+}
+
+.info-part .title {
+  font-size: 35rpx;
+  color: #555;
+  height: 60rpx;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20rpx;
+}
+
+.info-part:not(:last-child) {
+  margin-bottom: 80rpx;
+}
+
+.main-info {
+  margin-bottom: 50rpx;
+}
+
+.name {
+  font-size: 55rpx; 
+  color: #555;
+  border-bottom: 5rpx #000 solid;
+  margin-right: 30rpx;
+}
+
+.gender {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.f-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.oth-info {
+  display: flex;
+}
+
+.oth-info:not(:last-child) {
+  margin-bottom: 10rpx;
+}
+
+.oth-info view:not(:last-child) {
+  margin-right: 20rpx;
+}
+
+.photo-swiper {
+  width: 100%;
+  height: 402rpx;
+}
+
+.slide-image {
+  width: 670rpx;
+  height: 402rpx;
+}
