@@ -13,7 +13,7 @@
                  city="{{item.liveCity}}"
                  age="{{item.age}}"
                  userId="{{item.userId}}"
-                 uId="{{item.id}}"
+                 uid="{{item.id}}"
                  bind:click="clickCardItem"
                  university="{{item.school}}">
       </card-item>

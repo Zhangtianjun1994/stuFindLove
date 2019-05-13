@@ -106,7 +106,7 @@ App({
     openId:'',
     selfUserId:'',
     userInfo:null,
-    //baseUrl:'https://www.gxtdlm.cn',
+    //baseUrl:'https://localhost',
     userInfo: {
       avatarUrl: '',
       city: '',

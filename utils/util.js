@@ -1,3 +1,4 @@
+const app = getApp()
 const debugging = true
 
 const debugConsole = (type, ...args) => {
@@ -56,7 +57,8 @@ const formatNumber = n => {
 
 const usingMock = false
 
-const baseUrl = 'https://www.gxtdlm.cn'
+//const baseUrl = 'https://www.gxtdlm.cn'
+const baseUrl = app.globalData.baseUrl
 
 const request = opt => {
   if (usingMock) {

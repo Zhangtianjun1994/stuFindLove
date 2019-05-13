@@ -36,7 +36,7 @@ Page({
     app.loginResolve(() => {
       let id = options.id
       let userId = app.globalData.selfUserId
-      console.log(userId)
+      console.log("userInfo中获取的userId is"+userId+"and the id is "+id)
       // this.setData({
       //   userId: userId,
       //   isSelf: userId === app.globalData.selfUserId
@@ -51,9 +51,9 @@ Page({
       method: 'GET'
     })
     .then(data => {
-      console.log(data)
+      console.log("getDetail result is "+JSON.stringify(data))
       this.setData({
-        imageUrls: data.imageUrl.split(','),
+        imageUrls: data.imageUrl,
         id: data.id,
         education: data.education,
         hobby: data.hobby,

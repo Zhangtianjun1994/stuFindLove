@@ -20,7 +20,7 @@ Page({
       selfUserId:app.globalData.selfUserId
       //selfUserId: app.globalData.selfUserId
     })
-    console.log("update中selfUserId是什么："+app.globalData.selfUserId)
+    //console.log("update中selfUserId是什么："+app.globalData.selfUserId)
   },
 
   /**
@@ -28,6 +28,7 @@ Page({
    */
   onShow: function() {
     that = this;
+    update_user_list:[];
     that.getUpdateList();
   },
   getUpdateList: function() {
@@ -46,6 +47,12 @@ Page({
         var res = res.data
         wx.hideToast();
         if (res.code == 0) {
+          var new_user_list = res.data;
+          //js中将图片地址循环赋值
+          for (var userIndex in new_user_list) {
+            var iamgeUrls = new_user_list[userIndex].imageUrl;
+            new_user_list[userIndex].imageUrl = iamgeUrls[0];
+          }
           that.setData({
             update_user_list: res.data,
           });
@@ -66,7 +73,7 @@ Page({
   clickCardItem (event) {
     let userId = event.detail.userId
     let id = event.detail.id
-    console.log(userId, id)
+    console.log(userId+"  id is "+id)
     wx.navigateTo({
       url: `../user-info/user-info?userId=${userId}&id=${id}`
     })

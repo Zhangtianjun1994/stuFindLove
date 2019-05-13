@@ -31,6 +31,9 @@ Page({
    */
   onShow: function () {
     that = this;
+    that.setData({
+      all_user_list:[]
+    })
     that.getUserList();
   },
   getUserList: function () {
@@ -52,6 +55,12 @@ Page({
         var current_user_list = that.data.all_user_list
         wx.hideToast();
         if (res.code == 0) {
+          var new_user_list = res.data;
+          //js中将图片地址循环赋值
+          for(var userIndex in new_user_list){
+            var iamgeUrls = new_user_list[userIndex].imageUrl;
+            new_user_list[userIndex].imageUrl = iamgeUrls[0];
+          }
           that.setData({
             all_user_list: current_user_list.concat(res.data),
           });
