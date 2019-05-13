@@ -22,6 +22,7 @@ Page({
       selfUserId:app.globalData.selfUserId
       //selfUserId: app.globalData.selfUserId
     })
+    //console.log("update中selfUserId是什么："+app.globalData.selfUserId)
   },
 
   /**
@@ -29,6 +30,7 @@ Page({
    */
   onShow: function() {
     that = this;
+    update_user_list:[];
     that.getUpdateList();
   },
   getUpdateList: function() {
@@ -62,6 +64,10 @@ Page({
   clickCardItem (event) {
     let userId = event.detail.userId
     let id = event.detail.id
+<<<<<<< HEAD
+=======
+    console.log(userId+"  id is "+id)
+>>>>>>> d7182d1173c376c9aac864a42f0d9d4891022bed
     wx.navigateTo({
       url: `../user-info/user-info?userId=${userId}&id=${id}`
     })

@@ -32,6 +32,7 @@ Page({
           //返回的是插入的微信用户信息
           var res = res.data
           app.globalData.selfUserId = res.data.userId
+          console.log("selfUserid是：" + app.globalData.selfUserId)
         }
       });
       //授权成功后，跳转进入小程序首页

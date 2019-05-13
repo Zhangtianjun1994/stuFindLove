@@ -24,7 +24,7 @@ Page({
   handleTap () {
     let userId = getApp().globalData.selfUserId
     wx.navigateTo({
-      url: `../user-info/user-info?userId=${userId}`
+      url: `../user-info/user-info?userId=${userId}&id=3`
     })
   },
 

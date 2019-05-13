@@ -42,6 +42,9 @@ App({
                       if (res.code == 0) {
                         console.log("通过openId获取到userId信息"+res.data.userId)
                         that.globalData.selfUserId = res.data.userId
+                        console.log("selfUserId信息："+that.globalData.selfUserId)
+                      }else{
+                        //此时数据库没有userid和openId对应关系，调用插入数据方法
                       }
                       that.globalData.loginPending = false
                       that.loginResolve()
@@ -103,7 +106,7 @@ App({
     openId:'',
     selfUserId:'',
     userInfo:null,
-    //baseUrl:'https://www.gxtdlm.cn',
+    //baseUrl:'https://localhost',
     userInfo: {
       avatarUrl: '',
       city: '',

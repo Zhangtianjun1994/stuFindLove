@@ -31,6 +31,9 @@ Page({
    */
   onShow: function () {
     that = this;
+    that.setData({
+      all_user_list:[]
+    })
     that.getUserList();
   },
   getUserList: function () {
