@@ -5,11 +5,11 @@ Page({
    */
   data: {
     typeList: [{
-      to: '../message-my-focus/message-my-focus',
+      to: '../my-focus/my-focus',
       label: '我的关注',
       iconImageUrl: '../../images/icon/icon-focus.png'
     }, {
-      to: '../message-my-focus/message-my-focus',
+      to: '../focus-me/focus-me',
       label: '关注我的',
       iconImageUrl: '../../images/icon/icon-focus.png'
     }],
