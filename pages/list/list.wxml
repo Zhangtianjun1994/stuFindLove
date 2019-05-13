@@ -1,9 +1,12 @@
 <!--pages/updates/updates.wxml-->
 <view class="container" scroll-x="true" scroll-top="100">
   <view class="feed-item-info-wrapper">
-    <block wx:for="{{all_user_list}}" wx:for-index="index" wx:for-item="item" wx:key="item.id">
+    <block wx:for="{{all_user_list}}"
+           wx:for-index="index"
+           wx:for-item="item"
+           wx:key="item.id">
       <card-item class="feed-item"
-                 imageUrl="{{item.imageUrl}}"
+                 imageUrl="{{item.imageUrl[0]}}"
                  name="{{item.nickName}}"
                  gender="{{item.sex}}"
                  province="{{item.liveProvince}}" 

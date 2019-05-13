@@ -1,6 +1,8 @@
 // pages/updates/updates.js
 var that
 var app = getApp()
+const util = require('../../utils/util')
+
 Page({
   /**
    * 页面的初始数据
@@ -30,42 +32,36 @@ Page({
     that.getUpdateList();
   },
   getUpdateList: function() {
-    wx.showToast({
+    wx.showLoading({
       title: '加载中...',
       duration: 2000
     })
-    var url = that.data.url
-    wx.request({
-      url: url + '/publishUser/queryYestoday',
-      method: 'get',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: res => {
-        var res = res.data
-        wx.hideToast();
-        if (res.code == 0) {
-          that.setData({
-            update_user_list: res.data,
-          });
-        }
+    util.request({
+      url: '/publishUser/queryYestoday',
+      method: 'get'
+    })
+    .then(
+      data => {
+        that.setData({
+          update_user_list: data,
+        });
         //console.log("数据列表的长度："+that.data.publish_user_list.length)
-        if (res.data.length <= 0) {
+        if (data.length <= 0) {
           that.setData({
             loadingTip: '经过审核后会有更多信息偶',
           });
         }
       },
-      error: function(error) {
-
-      }
+      err => err
+    )
+    .then(() => {
+      wx.hideLoading()
     })
   },
   //显示信息详情
   clickCardItem (event) {
     let userId = event.detail.userId
     let id = event.detail.id
-    console.log(userId, id)
     wx.navigateTo({
       url: `../user-info/user-info?userId=${userId}&id=${id}`
     })

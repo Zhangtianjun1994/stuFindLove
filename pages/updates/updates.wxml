@@ -6,14 +6,14 @@
            wx:for-item="item"
            wx:key="item.id">
       <card-item class="feed-item" 
-                 imageUrl="{{item.imageUrl}}" 
+                 imageUrl="{{item.imageUrl[0]}}" 
                  name="{{item.nickName}}"
                  gender="{{item.sex}}"
                  province="{{item.liveProvince}}" 
                  city="{{item.liveCity}}"
                  age="{{item.age}}"
                  userId="{{item.userId}}"
-                 uId="{{item.id}}"
+                 uid="{{item.id}}"
                  bind:click="clickCardItem"
                  university="{{item.school}}">
       </card-item>
