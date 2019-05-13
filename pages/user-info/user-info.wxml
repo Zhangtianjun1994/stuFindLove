@@ -45,7 +45,7 @@
                 interval="5000"
                 class="photo-swiper"
                 duration="500">
-          <block wx:for="{{imageUrls}}"
+          <block wx:for="{{imageUrl}}"
                  wx:for-index="index"
                  wx:key="{{index}}">
             <swiper-item>

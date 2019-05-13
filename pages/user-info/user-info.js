@@ -11,8 +11,8 @@ Page({
   data: {
     nickName: '',
     id: '',
-    isSelf: true,
-    userId: 123,
+    isSelf: false,
+    userId: '',
     birthday: '--',
     gender: '--',
     height: '--',
@@ -25,7 +25,7 @@ Page({
     hobby: '--',
     selfIntroduction: '--',
     idealTa: '--',
-    imageUrls: [],
+    imageUrl: [],
     constellation: ''
   },
 
@@ -36,24 +36,31 @@ Page({
     app.loginResolve(() => {
       let id = options.id
       let userId = app.globalData.selfUserId
-      console.log(userId)
-      // this.setData({
-      //   userId: userId,
-      //   isSelf: userId === app.globalData.selfUserId
-      // })
+      this.setData({
+        userId: userId
+      })
+      util.request({
+        url: `/friends/myFocus?userId=${userId}`
+      })
+      if (id !== undefined) {
+        this.setData({
+          id: id
+        })
+      }
       this.getDetail(userId, id)
     })
   },
 
   getDetail (userId, id) {
+    let url = ''
+    url = id !== undefined ? `/publishUser/queryById?userId=${userId}&id=${id}` : `/publishUser/querySelfByUserId?userId=${userId}`
     util.request({
-      url: `/publishUser/queryById?userId=${userId}&id=${id}`,
+      url,
       method: 'GET'
     })
     .then(data => {
-      console.log(data)
       this.setData({
-        imageUrls: data.imageUrl.split(','),
+        imageUrl: Array.isArray(data.imageUrl) ? data.imageUrl : [data.imageUrl],
         id: data.id,
         education: data.education,
         hobby: data.hobby,
@@ -68,7 +75,8 @@ Page({
         school: data.school,
         birthday: data.birthday,
         constellation: data.aries,
-        height: data.height
+        height: data.height,
+        isSelf: data.self
       })
     })
   },

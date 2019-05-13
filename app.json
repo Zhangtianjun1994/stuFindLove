@@ -1,14 +1,16 @@
 {
   "pages": [
-    "pages/updates/updates",
-    "pages/personal/personal",
+    "pages/list/list",
+    "pages/my-focus/my-focus",
     "pages/message/message",
+    "pages/personal/personal",
+    "pages/user-info/user-info",
+    "pages/updates/updates",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/list/list",
     "pages/message-my-focus/message-my-focus",
-    "pages/user-info/user-info",
-    "pages/authorize/authorize"
+    "pages/authorize/authorize",
+    "pages/focus-me/focus-me"
   ],
   "window": {
     "backgroundTextStyle": "light",
