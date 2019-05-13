@@ -28,6 +28,7 @@ Component({
       type: String,
       value: '--大学'
     },
+    /** 
     hometownCity: {
       type: String,
       value: ''
@@ -36,6 +37,7 @@ Component({
       type: String,
       value: ''
     },
+    */
     liveCity: {
       type: String,
       value: ''

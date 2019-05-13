@@ -22,9 +22,11 @@
     <view class="row">
       <view class="">现居 {{liveProvince}}-{{liveCity}}</view>
     </view>
+    <!--
     <view class="row">
       <view class="">家乡 {{hometownProvince}}-{{hometownCity}}</view>
     </view>
+    -->
   </view>
   <view class="focus-status" catchtap="handleTapFocus">
     <block wx:if="{{focusStatus === focusStateEnum.IS_FOCUS}}">

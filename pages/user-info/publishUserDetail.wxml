@@ -1,0 +1,110 @@
+<view class="page">
+
+
+  <!--教师照片、名字、课程-->
+  <view class="teacher-sketch">
+    <image class="teacherPhoto" bindtap="preview" src="{{publishUser.imageUrl}}" bindtap='previewImg'/>
+    <view class="name-course">
+      <view class="teacher-name">{{publishUser.nickName}}</view>
+      <view class="teacher-name-little">{{publishUser.age}}岁</view>
+      <view class="teacher-name-little">身高:{{publishUser.height}}</view>
+    </view>
+
+    <view class="" wx:if="{{isSelf==false}}">
+      <button class="complaint" bindtap="complaint" plain="true" style="border:0;height:75rpx;">
+        <image class="complaintIcon" bindtap="complaint" src="../../image/complaint.png" />
+      </button>
+    </view>
+    <view class="" wx:elif="{{isSelf==true}}">
+      <button class="complaint" bindtap="modify" plain="true" style="border:0;height:75rpx;">
+        <image class="complaintIcon" bindtap="modify" src="../../image/modify.png" />
+      </button>
+    </view>
+  </view>
+
+  <view class="course-check" style=" padding-bottom:20rpx;background-color:#fff;width:100%;padding:0rpx 15rpx 20rpx 15rpx;">
+    <view class="courseItem">
+      <view style="padding:10rpx;"></view>
+    </view>
+  </view>
+  <!--个人信息-->
+  <view class="teachRange-salary" style='margin-top:0rpx;'>
+    <view class="salary">
+      <text class="gray-text">择偶标准 :</text>
+      <text style="padding-left:10rpx;">{{publishUser.idealTa}}</text>
+    </view>
+  </view>
+
+  <!--个人简介-->
+  <view class="teacher-info">
+    <view class="teacher-university">
+      <text class="gray-text">所在学校 :</text>
+      <text style="padding-left:10rpx;">{{publishUser.school}}</text>
+    </view>
+
+    <view class="teacher-score">
+      <text class="gray-text">学历 :</text>
+      <text style="padding-left:10rpx;">{{publishUser.education}}</text>
+    </view>
+
+    <view class="degree">
+      <text class="gray-text">专业 :</text>
+      <text style="padding-left:10rpx;">{{publishUser.major}}</text>
+    </view>
+
+    <view class="major">
+
+      <text class="gray-text">家乡 :</text>
+      <text style="padding-left:10rpx;">{{publishUser.hometownProvince}} {{publishUser.hometownCity}}</text>
+    </view>
+  </view>
+
+
+  <view class="telephone">
+    <text class="gray-text">微信 :</text>
+    <text style="padding-left:10rpx;">{{publishUser.wechat}}</text>
+  </view>
+
+
+  <!--自我介绍-->
+  <view class="self-introduction">
+    <text class="self-title">兴趣爱好:</text>
+    <text class="self-int">{{publishUser.hobby}}</text>
+  </view>
+
+  <view class="gallery">
+    <view class="itemImage" wx:for="{{imageArr}}" wx:key="item">
+      <image class="thumb" data-current="{{item}}" style="width: {{2*image_width}}rpx; height: {{2*image_width}}rpx" src="{{item}}" bindtap="previewImage" />
+    </view>
+  </view>
+
+  <view class="tip" wx:if="{{isSelf==false}}">
+    <text>已经到底啦！快复制{{publishUser.nickName}}微信聊天吧</text>
+  </view>
+
+
+  <view class="bottom" wx:if="{{showBottom=='true'}}">
+    <view class="share-left">
+      <button class="share" open-type="share" plain="true" style="border:0;height:60rpx;">
+        <image class="shareIcon" bindtap="share" src="../../image/share2.png" />
+      </button>
+      <text class="collect-text" style='color:#fe4c40;'>分享</text>
+    </view>
+    <view class="collect-left" bindtap="collect">
+      <view class="collect" wx:if="{{judgeCollect==false}}">
+        <image class="collect-icon" src="../../image/collect.png"></image>
+        <text class="collect-text">收藏</text>
+      </view>
+      <view class="collect" wx:elif="{{judgeCollect==true}}">
+        <image class="collect-icon" src="../../image/collect-click.png"></image>
+        <text class="collect-text">收藏</text>
+      </view>
+    </view>
+    <view class="talk-right" wx:if="{{isSelf==false}}" bindtap="copyWechat">
+      <text>复制微信</text>
+    </view>
+    <view class="talk-right" wx:elif="{{isSelf==true}}" bindtap="deletePublish">
+      <text>删除发布</text>
+    </view>
+  </view>
+</view>

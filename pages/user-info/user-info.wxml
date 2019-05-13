@@ -10,8 +10,8 @@
       <view class="content">
         <view class="f-r oth-info">
           <view class="height">{{height}}cm</view>
-          <view >{{birthday}}</view>
-          <view >{{constellation}}</view>
+          <view>{{birthday}}</view>
+          <view>{{constellation}}</view>
         </view>
         <view class="f-r oth-info">
           <view class="school">{{school}}</view>
@@ -40,20 +40,18 @@
     <view class="info-part">
       <view class="title">我的照片</view>
       <view class="content">
-        <swiper indicator-dots="{{true}}" 
-                autoplay="{{true}}"
-                interval="5000"
-                class="photo-swiper"
-                duration="500">
-          <block wx:for="{{imageUrl}}"
-                 wx:for-index="index"
-                 wx:key="{{index}}">
+        <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" class="photo-swiper" duration="500">
+          <block wx:for="{{imageUrl}}" wx:for-index="index" wx:key="{{index}}">
             <swiper-item>
-              <image src="{{item}}" class="slide-image" width="200"/>
+              <image src="{{item}}" class="slide-image" width="200" />
             </swiper-item>
           </block>
         </swiper>
       </view>
     </view>
   </view>
+</view>
+<view class=''>
+  <button bindtap='copyWechat'>复制微信</button>
+  <button class="" open-type="share" bindtap="share">分享</button>
 </view>

@@ -13,7 +13,6 @@
                 education="{{item.education}}"
                 school="{{item.school}}"
                 hometownCity="{{item.hometownCity}}"
-                hometownProvince="{{item.hometownProvince}}"
                 liveCity="{{item.liveCity}}"
                 liveProvince="{{item.liveProvince}}"
                 height="{{item.height}}"
