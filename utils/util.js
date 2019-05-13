@@ -76,7 +76,10 @@ const request = opt => {
       }
       let fail = err => reject(err)
       let url = baseUrl + opt.url
-      Object.assign(opt, {success, fail, url})
+      let header = {
+        'content-type': 'application/json'
+      }
+      Object.assign(opt, {success, fail, url, header})
       wx.request(opt)
     })
   }
