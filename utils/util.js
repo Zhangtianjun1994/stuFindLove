@@ -57,26 +57,36 @@ const formatNumber = n => {
 
 const usingMock = false
 
-//const baseUrl = 'https://www.gxtdlm.cn'
-const baseUrl = app.globalData.baseUrl
+const baseUrl = 'https://www.gxtdlm.cn'
 
-const request = opt => {
+const defaultLoadingOption = {
+  title: '加载中',
+  duration: 2000
+}
+
+const request = (opt, useLoading = true, loadingOption) => {
   if (usingMock) {
     
   } else {
+    loadingOption = Object.assign({}, defaultLoadingOption, loadingOption)
+    useLoading && wx.showLoading(loadingOption)
     return new Promise((resolve, reject) => {
       let success = res => {
         if (res.statusCode >= 200 && res.statusCode < 300) {
           if (res.data.code === 0) {
-            resolve(res.data.data)
+            resolve(res.data.data || res.data)
           } else {
-            reject(res.data.data)
+            reject(res.data)
           }
         } else {
           reject(res)
         }
+        useLoading && wx.hideLoading()
       }
-      let fail = err => reject(err)
+      let fail = err => {
+        reject(err)
+        useLoading && wx.hideLoading()
+      }
       let url = baseUrl + opt.url
       let header = {
         'content-type': 'application/json'
