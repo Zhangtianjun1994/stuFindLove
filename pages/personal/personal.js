@@ -7,7 +7,8 @@ Page({
   data: {
     cardList: [{
       label: '朋友的桃花牌',
-      iconImageUrl: '../../images/icon/icon-focus.png'
+      iconImageUrl: '../../images/icon/icon-focus.png',
+      to:'../friends-list/friends-list'
     }, {
       label: '为好友发布桃花牌',
       iconImageUrl: '../../images/icon/icon-focus.png'

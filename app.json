@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/list/list",
+    "pages/friends-list/friends-list",
     "pages/my-focus/my-focus",
     "pages/message/message",
     "pages/personal/personal",

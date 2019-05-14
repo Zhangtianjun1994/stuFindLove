@@ -32,7 +32,9 @@ Page({
   onShow: function () {
     that = this;
     that.setData({
-      all_user_list:[]
+      all_user_list:[],
+      pageIndex:0,
+      has_more:true
     })
     that.getUserList();
   },

@@ -33,6 +33,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log("传递的参数id是"+options.id)
     that = this
     app.loginResolve(() => {
         let id = options.id
@@ -124,8 +125,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that = this
-      console.log("that.data.id is "+that.data.id)
   },
 
   /**
@@ -158,6 +157,7 @@ Page({
   /**分享信息逻辑，右上角的转发 */
   onShareAppMessage: (res) => {
     var id = that.data.id
+    console.log("分享的id是"+id)
     var imageUrl0 = that.data.imageUrl[0]
     if (res.from === 'button') {
       console.log("来自页面内转发按钮");
