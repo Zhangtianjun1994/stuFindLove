@@ -81,28 +81,36 @@ Page({
         url,
         method: 'GET'
       })
-      .then(data => {
-        this.setData({
-          imageUrl: Array.isArray(data.imageUrl) ? data.imageUrl : [data.imageUrl],
-          id: data.id,
-          education: data.education,
-          hobby: data.hobby,
-          hometownCity: data.hometownCity,
-          hometownProvince: data.hometownProvince,
-          liveCity: data.liveCity,
-          liveProvince: data.liveProvince,
-          nickName: data.nickName,
-          selfIntroduction: data.selfIntroduction,
-          idealTa: data.idealTa,
-          gender: data.sex,
-          school: data.school,
-          birthday: data.birthday,
-          constellation: data.aries,
-          height: data.height,
-          isSelf: data.self,
-          wechat: data.wechat
-        })
-      })
+      .then(
+        data => {
+          this.setData({
+            imageUrl: Array.isArray(data.imageUrl) ? data.imageUrl : [data.imageUrl],
+            id: data.id,
+            education: data.education,
+            hobby: data.hobby,
+            hometownCity: data.hometownCity,
+            hometownProvince: data.hometownProvince,
+            liveCity: data.liveCity,
+            liveProvince: data.liveProvince,
+            nickName: data.nickName,
+            selfIntroduction: data.selfIntroduction,
+            idealTa: data.idealTa,
+            gender: data.sex,
+            school: data.school,
+            birthday: data.birthday,
+            constellation: data.aries,
+            height: data.height,
+            isSelf: data.self,
+            wechat: data.wechat
+          })
+        },
+        err => {
+          wx.showToast({
+            title: `请求失败: ${url},${err}`,
+            duration: '100000'
+          })
+        }
+      )
   },
 
   /**
