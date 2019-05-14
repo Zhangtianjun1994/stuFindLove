@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "focus-item": "../../components/friends-item/friends-item"
+  }
+}

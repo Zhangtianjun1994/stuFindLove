@@ -1,0 +1,25 @@
+<!--pages/my-focus/my-focus.wxml-->
+<view class="focus-list">
+  <block wx:for="{{list}}"
+         wx:for-index="index"
+         wx:key="item.id"
+         wx:for-item="item">
+    <focus-item class="focus-item"
+                imageSrc="{{item.imageUrl}}"
+                nickname="{{item.nickName}}"
+                userId="{{item.userId}}"
+                uid="{{item.id}}"
+                education="{{item.education}}"
+                school="{{item.school}}"
+                hometownCity="{{item.hometownCity}}"
+                liveCity="{{item.liveCity}}"
+                liveProvince="{{item.liveProvince}}"
+                height="{{item.height}}"
+                gender="{{item.sex}}"
+                age="{{item.age}}"
+                constellation="{{item.aries}}"
+                selfDisplay="{{item.selfDisplay}}"
+                bind:click="clickFocusItem">
+    </focus-item>
+  </block>
+</view>

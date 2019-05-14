@@ -1,0 +1,42 @@
+<!--components/focus-item/focus-item.wxml-->
+<view class="focus-item" bindtap="handleTapOutside">
+  <view class="head-img">
+    <image src="{{imageSrc}}" />
+  </view>
+  <view class="info-wrapper">
+    <view class="row main-row">
+      <view class="nickname">{{nickname}}</view>
+      <view class="gender">{{gender}}</view>
+    </view>
+    <view class="row">
+      <view class="">{{height}}cm</view>
+    </view>
+    <view class="row">
+      <view class="">{{age}}岁</view>
+      <view class="">{{constellation}}</view>
+    </view>
+    <view class="row">
+      <view class="">{{school}}</view>
+      <view class="">{{education}}</view>
+    </view>
+    <view class="row">
+      <view class="">现居 {{liveProvince}}-{{liveCity}}</view>
+    </view>
+  </view>
+  <view class="focus-status" catchtap="handleTapFocus">
+    <image class="focus-icon" src="../../images/icon/icon-down.png" catchtap='actionSheetTap'></image>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+      <view wx:if="{{selfDisplay === true}}">
+        <block wx:for="{{actionSheetItems1}}" wx:key="item">
+          <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+      </view>
+      <view wx:if="{{selfDisplay === false}}">
+        <block wx:for="{{actionSheetItems2}}" wx:key="item">
+          <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+      </view>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+  </view>
+</view>
