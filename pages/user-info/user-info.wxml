@@ -53,5 +53,5 @@
 </view>
 <view class=''>
   <button bindtap='copyWechat'>复制微信</button>
-  <button class="" open-type="share" bindtap="share">分享</button>
+  <button class="" open-type="share">分享</button>
 </view>
