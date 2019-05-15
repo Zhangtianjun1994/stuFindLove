@@ -1,0 +1,6 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+  
+  <redirect-list list="{{cardList}}" class="mb-20"></redirect-list>
+  <redirect-list list="{{othList}}"></redirect-list>
+</view>

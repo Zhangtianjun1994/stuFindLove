@@ -1,0 +1,43 @@
+/* pages/personal/personal.wxss */
+
+.container {
+  padding: 15rpx 0;
+}
+
+.container .self-info-wrapper {
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx 0 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 40rpx;
+}
+
+.container .self-info-wrapper .self-left {
+  display: flex;
+  align-items: center;
+}
+
+.container .self-info-wrapper .self-title {
+  color: #333;
+  font-size: 45rpx;
+}
+
+.container .self-info-wrapper .self-head {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+
+.container .self-info-wrapper .self-head image {
+  width: 100%;
+  height: 100%;
+}
+
+.container .self-info-wrapper .self-right {
+  font-size: 22rpx;
+  color: #777;
+}

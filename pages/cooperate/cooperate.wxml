@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="feedbackText">合作推广方式</view>
+  <view class="title">
+    <view class='textSuojin'>
+      大学生恋爱菌小程序用户群主要为在校、毕业大学生群体，当前在线使用用户101223（动态获取）人,如果您有合作推广意向，请联系工作人员。
+    </view>
+    <view class="title">
+      <text>
+电话:{{telephone}}
+
+微信:{{wechat}}
+
+QQ:{{qq}}
+
+邮箱:{{email}}
+</text>
+    </view>
+  </view>
+</view>

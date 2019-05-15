@@ -1,0 +1,30 @@
+.container {
+  padding: 15rpx 0;
+}
+
+.topic{
+  vertical-align:middle;
+  color: #777;
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.title{
+  padding: 10px 10px;
+  color: #777;
+  font-size: 30rpx;
+  text-align: left
+}
+
+.content{
+  padding: 0px 5px;
+  color: #777;
+  font-size: 22rpx;
+}
+
+.textSuojin{
+  text-indent: 44rpx;
+  text-align: left;
+}
+
+

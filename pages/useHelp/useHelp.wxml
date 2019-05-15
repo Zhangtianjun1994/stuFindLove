@@ -1,0 +1,68 @@
+<view class="page">
+  <view class="background">
+    <view class="howGetTeacher" bindtap="showHowGetTeacher">
+      <text>如何发布信息？</text>
+      <image class='downArrow' src="../../image/downArrow.png"></image>
+    </view>
+
+    <view class="detailHowGetTeacher" wx:if="{{showHowGetTeacher==true}}">
+      <text>
+                1.点击《发布信息》，然后按照要求填写个人信息，个人信息填写完成点击发布信息按钮，提示发布成功则表示信息发布成功至后台。\n
+                2.注意一定要上传学生证照片，作为学生身份核验，方可被审核通过。\n
+                3.发布信息成功之后，可以在《个人中心》点击《我的发布》进行查看\n
+                4.审核结果会在《个人中心》的《我的发布》中展示“未审核” “审核通过” “审核未通过”。\n
+                注：本平台不限制发布信息的次数，但是要经过后台审核之后方可展示出来。
+            </text>
+    </view>
+
+    <view class="howGetStudent" bindtap="showHowGetStudent">
+      <text> 如何查看其他朋友的发布信息？</text>
+      <image class='downArrow' src="../../image/downArrow.png"></image>
+    </view>
+
+    <view class="detailHowGetStudent" wx:if="{{showHowGetStudent==true}}">
+      <text>
+                1.首先是《今日更新》页面，每天8点定时更新前一天发布的信息，可以每天浏览新发布的信息。\n
+                2.其次是《信息列表》页面，包括所有历史发布信息，支持按条件筛选。\n
+                3.点击信息列表的信息，可以查看此用户的详细信息。\n
+            </text>
+    </view>
+
+    <view class="protectPrivacy" bindtap="showProtectPrivacy">
+      <text> 平台的其他功能？</text>
+      <image class='downArrow' src="../../image/downArrow.png"></image>
+    </view>
+
+    <view class="detailProtectPrivacy" wx:if="{{showProtectPrivacy==true}}">
+      <text>
+                1.在用户详细信息页面，支持对此用户进行收藏，收藏之后在《个人中心》的《我的收藏》查看收藏信息\n
+                2.在用户详细信息页面，支持对此用户进行举报。\n
+                3.在用户详细信息页面，支持对此用户进行分享。\n
+                4.在《个人中心》的《意见征集》，提出您宝贵的建议。\n
+                5.在《个人中心》的《审核结果》，功能在开发中。
+            </text>
+    </view>
+
+    <view class="aboutSalary" bindtap="showAboutSalary">
+      <text>如果自己想删除已经发布的信息怎么办？</text>
+      <image class='downArrow' src="../../image/downArrow.png"></image>
+    </view>
+
+    <view class="detailAboutSalary" wx:if="{{showAboutSalary==true}}">
+      <text>
+            在用户详细信息页面，如果是您发布的信息，右下角支持对此条信息进行删除\n
+            <text style="color:#fe4c40">本平台不收取任何中介费等无理费用。</text>
+      </text>
+    </view>
+
+
+
+
+    <view class="bottom" bindtap="feedback">
+      <view class="iconText">
+        <image class="feedbackIcon" src="../../image/modify.png"></image>
+        <text class="feedbackText">问题反馈</text>
+      </view>
+    </view>
+  </view>
+</view>

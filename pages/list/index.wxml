@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="firstOpen {{!firstOpen?'firstOpenOpacity':''}}">
+    <image src="../../image/logo.png" class="logo"></image>
+    <view class="openTitle">高校脱单联盟</view>
+    <view class="openContent">
+      <view class="detailText">只针对大学生的交友网站</view>
+      <view class="detailText">每日定时更新 条件筛选信息</view>
+      <view class="detailText">自主发布信息 随时删除信息</view>
+      <view class="detailText">保证隐私安全 交流谨防诈骗</view>
+      <view class="detailText">脱单 就来高校脱单联盟</view>
+    </view>
+    <view class="openButton" bindtap="openNow">
+      <text>立即体验</text>
+    </view>
+  </view>
+
+  <view wx:for="{{todayUpdateUser}}" wx:key="unique" class="row" bindtap="showDetail" data-index="{{index}}">
+    <view class="item">
+      <view class="item-left">
+        <image class="teacherPhoto" src="{{item.imageUrl}}" />
+      </view>
+      <view class="item-middle">
+        <view class="name-trait">
+          <text class="teacher-name">{{item.nickName}}</text>
+          <view class="trait">
+            <view calss="trait-text">{{item.sex}}</view>
+          </view>
+        </view>
+        <view class="teacher-university">{{item.school}}</view>
+        <view class="teacher-score">{{item.age}}岁</view>
+        <view class="teacher-score">身高:{{item.height}}</view>
+      </view>
+
+      <view class="item-right">
+        <view class="user-info-right">现居:{{item.liveProvince}} {{item.liveCity}}</view>
+        <view class="user-info-right">家乡:{{item.hometownProvince}} {{item.hometownCity}}</view>
+        <view class="user-info-right">微信:{{item.wechat}}</view>
+        <view class="user-info-right">加个图标</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="loading-indicator">
+    {{loadingTip}}
+  </view>
+</view>
