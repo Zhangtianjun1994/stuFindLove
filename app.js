@@ -10,6 +10,21 @@ App({
     wx.setStorageSync('logs', logs)
     that = this;
     that.globalData.loginPending = true;
+    utils.request({
+      url:'/componey/getComponeyInfo',
+      method: 'GET'
+    })
+      .then(
+        data => {
+          that.globalData.componeyInfo = data
+        },
+        err => {
+          wx.showToast({
+            title: `请求失败: ${url},${err}`,
+            duration: '100000'
+          })
+        }
+      ),
     // 登录
     wx.login({
         success: res => {
@@ -98,16 +113,17 @@ App({
     loginCallbacks: [],
     openId:'',
     selfUserId:'',
-    userInfo: {
-      avatarUrl: '',
-      city: '',
-      country: '',
-      gender: 1,
-      language: '',
-      nickName: '',
-      province: ''
-    },
-    hasUserInfo: false
+    userInfo: null,
+    hasUserInfo: false,
+    componeyInfo:{
+      componeyName:'',
+      corporationName:'',
+      email:'',
+      telephone:'',
+      wechat:'',
+      qq:'',
+      userCount:''
+    }
   },
   loginResolve (fn) {
     if (this.globalData.loginPending) {

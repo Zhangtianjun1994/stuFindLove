@@ -31,6 +31,7 @@
 
 .main-info {
   margin-bottom: 50rpx;
+  display: flex;
 }
 
 .name {
@@ -43,6 +44,7 @@
 .gender {
   font-size: 30rpx;
   color: #999;
+  padding-top: 30rpx;
 }
 
 .f-r {
@@ -70,4 +72,14 @@
 .slide-image {
   width: 670rpx;
   height: 402rpx;
+}
+
+.collect-image-outside{
+    margin-left: 50%;
+}
+
+.collect-image{
+  padding-top: 25rpx;
+  width:50rpx;
+  height:50rpx;
 }

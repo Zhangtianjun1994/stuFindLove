@@ -7,3 +7,63 @@
 .container .feed-item:not(:last-child) {
   margin-bottom: 10rpx;
 }
+
+
+page{
+     height: 100%;
+ }
+
+.detailText{
+  margin-bottom: 20rpx;
+}
+
+.firstOpenOpacity{
+  display: none;
+}
+
+.firstOpen{
+  z-index: 100;
+  position: absolute;
+  top: 20%;
+  left: 41%;
+  margin-left: -250rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  text-align: center;
+  display: block;
+  padding: 120rpx 110rpx 120rpx 110rpx;
+} 
+
+.openButton{
+  border-radius: 10rpx;
+  text-align: center;
+  margin: auto;
+  margin-top: 70rpx;
+  font-size: 40rpx;
+  height: 70rpx;
+  width: 300rpx;
+  background-color: #6f706880;
+    align-items:center;
+    padding-top: 30rpx;
+}
+
+.openTitle{
+  font-size: 50rpx;
+  color: #595858;
+  padding-bottom: 20rpx;
+} 
+
+.openContent{
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  color: #737273;
+}
+
+.logo{
+  width: 120rpx;
+  height: 120rpx;
+  top: -60rpx;
+  position: absolute;
+  margin-left: -60rpx;
+    z-index: 101;
+}

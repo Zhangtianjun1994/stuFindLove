@@ -27,7 +27,8 @@ Page({
     idealTa: '--',
     imageUrl: [],
     constellation: '',
-    wechat: '' //个人联系方式微信
+    wechat: '', //个人联系方式微信
+    isFocus:false,//是不是已经收藏的信息
   },
   /**
    * 生命周期函数--监听页面加载
@@ -52,8 +53,6 @@ Page({
       withShareTicket: true //分享之后在其他用户点击后，要求小程序返回分享目标信息
     })
   },
- 
-
   /**复制微信逻辑 ，点击复制微信button获取*/
   copyWechat: function(e) {
     var wechat = that.data.wechat
@@ -102,7 +101,8 @@ Page({
             constellation: data.aries,
             height: data.height,
             isSelf: data.self,
-            wechat: data.wechat
+            wechat: data.wechat,
+            isFocus:data.focus
           })
         },
         err => {
@@ -112,6 +112,52 @@ Page({
           })
         }
       )
+  },
+/**collect表示收藏方法 */
+  collect: function () {
+    var collectResult = that.data.isFocus;
+    var selfUserId = that.data.userId;
+    var collectId = that.data.id;
+    if (collectResult == false) {
+      //插入本用户的收藏的信息的id到friends表
+      util.request({
+        url:'/friends/insertFocus?userId='+selfUserId+'&focusId='+collectId,
+        method: 'GET'
+      })
+        .then(
+          data => {
+            console.log("插入数据成功")
+            this.setData({
+              isFocus: true
+            })
+          },
+          err => {
+            wx.showToast({
+              title: '收藏失败',
+              duration: '10000'
+            })
+          }
+        )
+    } else {
+      util.request({
+        url: '/friends/cancelFocus?userId=' + selfUserId + '&focusId=' + collectId,
+        method: 'GET'
+      })
+        .then(
+          data => {
+            console.log(" 取消收藏数据成功")
+            this.setData({
+              isFocus: false
+            })
+          },
+          err => {
+            wx.showToast({
+              title: '取消收藏失败',
+              duration: '10000'
+            })
+          }
+        )
+    }
   },
 
   /**

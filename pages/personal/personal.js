@@ -1,31 +1,35 @@
 // pages/personal/personal.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imageUrl:'',
     cardList: [{
       label: '朋友的桃花牌',
-      iconImageUrl: '../../images/icon/icon-focus.png',
+      iconImageUrl: '../../images/icon/icon-friend-infos.png',
       to:'../friends-list/friends-list'
     }, {
       label: '为好友发布桃花牌',
-      iconImageUrl: '../../images/icon/icon-focus.png'
+      iconImageUrl: '../../images/icon/icon-friend-publish.png'
     }],
     othList: [{
       label: '设置',
-      iconImageUrl: '../../images/icon/icon-focus.png'
+      iconImageUrl: '../../images/icon/icon-setup.png',
+      to:'../setup/setup'
     }, {
       label: '合作推广',
-      iconImageUrl: '../../images/icon/icon-focus.png'
+      iconImageUrl: '../../images/icon/icon-cooperate.png',
+      to:'../cooperate/cooperate'
     }]
   },
 
   handleTap () {
     let userId = getApp().globalData.selfUserId
     wx.navigateTo({
-      url: `../user-info/user-info?userId=${userId}&id=3`
+      url: `../user-info/user-info?userId=${userId}`
     })
   },
 
@@ -33,7 +37,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      imageUrl: app.globalData.userInfo.avatarUrl
+    })
   },
 
   /**

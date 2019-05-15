@@ -1,9 +1,29 @@
 <!--pages/user-info/user-info.wxml-->
 <view class="user-info-container">
   <view class="info-wrapper">
+    <view class="info-part">
+      <view class="content">
+        <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" class="photo-swiper" duration="500">
+          <block wx:for="{{imageUrl}}" wx:for-index="index" wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" width="200" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
     <view class="main-info">
       <text class="name">{{nickName}}</text>
       <text class="gender">{{gender}}</text>
+      <view class="collect-image-outside" bindtap="collect">
+        <view class="" wx:if="{{isFocus==false}}">
+          <image class="collect-image" src="../../images/icon/icon-collect.png"></image>
+        </view>
+        <view class="" wx:elif="{{isFocus==true}}">
+          <image class="collect-image" src="../../images/icon/icon-collect-active.png"></image>
+        </view>
+      </view>
     </view>
     <view class="info-part">
       <view class="title">个人信息</view>
@@ -36,18 +56,6 @@
     <view class="info-part">
       <view class="title">我的理想对象</view>
       <view class="content">{{idealTa}}</view>
-    </view>
-    <view class="info-part">
-      <view class="title">我的照片</view>
-      <view class="content">
-        <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" class="photo-swiper" duration="500">
-          <block wx:for="{{imageUrl}}" wx:for-index="index" wx:key="{{index}}">
-            <swiper-item>
-              <image src="{{item}}" class="slide-image" width="200" />
-            </swiper-item>
-          </block>
-        </swiper>
-      </view>
     </view>
   </view>
 </view>

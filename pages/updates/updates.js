@@ -13,15 +13,27 @@ Page({
     url: '',
     update_user_list: [],
     loadingTip: '没有更多信息了',
-    isHiddenImageEditor: true
+    isHiddenImageEditor: true,
+    firstOpen:null,
+    userCount:''
   },
   onLoad: function() {
     that = this;
+    var firstOpen = wx.getStorageSync('firstOpen')
+    console.log("firstOpen is "+firstOpen)
+    if (!firstOpen) {
+      that.setData({
+        firstOpen: true,
+        userCount:app.globalData.componeyInfo.userCount
+      })
+      wx.setStorageSync('firstOpen', true)
+    }
     that.setData({
       url: app.globalData.baseUrl,
       selfUserId:app.globalData.selfUserId
       //selfUserId: app.globalData.selfUserId
     })
+    
     //console.log("update中selfUserId是什么："+app.globalData.selfUserId)
   },
 
@@ -60,5 +72,15 @@ Page({
     wx.navigateTo({
       url: `../user-info/user-info?userId=${userId}&id=${id}`
     })
-  }
+  },
+  //用于第一次进入信息展示
+  openNow: function () {
+    this.setData({
+      firstOpen: false,
+    })
+    wx.setStorage({
+      key: "firstOpen",
+      data: "false"
+    })
+  },
 })

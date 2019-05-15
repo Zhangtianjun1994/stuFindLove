@@ -41,3 +41,12 @@
   font-size: 22rpx;
   color: #777;
 }
+
+.photo {
+  display: flex;
+  margin: 0 auto;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+}

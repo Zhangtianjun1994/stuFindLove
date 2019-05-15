@@ -3,7 +3,7 @@
   <view class="self-info-wrapper" bindtap="handleTap">
     <view class="self-left">
       <view class="self-head">
-        <image src="../../images/icon/head.png" />
+        <image class='photo' src="{{imageUrl}}" />
       </view>
       <view class="self-title">我的信息</view>
     </view>

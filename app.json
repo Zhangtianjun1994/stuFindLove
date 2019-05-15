@@ -11,7 +11,11 @@
     "pages/logs/logs",
     "pages/message-my-focus/message-my-focus",
     "pages/authorize/authorize",
-    "pages/focus-me/focus-me"
+    "pages/focus-me/focus-me",
+    "pages/useHelp/useHelp",
+    "pages/agreeMent/agreeMent",
+    "pages/cooperate/cooperate",
+    "pages/setup/setup"
   ],
   "window": {
     "backgroundTextStyle": "light",
