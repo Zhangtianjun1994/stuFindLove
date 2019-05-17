@@ -57,8 +57,8 @@ const formatNumber = n => {
 
 const usingMock = false
 
-//const baseUrl = 'https://www.gxtdlm.cn'
-const baseUrl = 'https://localhost'
+const baseUrl = 'https://www.gxtdlm.cn'
+//const baseUrl = 'https://localhost'
 
 const defaultLoadingOption = {
   title: '加载中',
