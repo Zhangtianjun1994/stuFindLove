@@ -15,7 +15,8 @@
     "pages/useHelp/useHelp",
     "pages/agreeMent/agreeMent",
     "pages/cooperate/cooperate",
-    "pages/setup/setup"
+    "pages/setup/setup",
+    "pages/uploadToCOS/uploadToCOS"
   ],
   "window": {
     "backgroundTextStyle": "light",

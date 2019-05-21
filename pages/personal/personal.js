@@ -23,7 +23,12 @@ Page({
       label: '合作推广',
       iconImageUrl: '../../images/icon/icon-cooperate.png',
       to:'../cooperate/cooperate'
-    }]
+      }, {
+        label: '上传到COS实例',
+        iconImageUrl: '../../images/icon/icon-cooperate.png',
+        to: '../uploadToCOS/uploadToCOS'
+      },
+    ]
   },
 
   handleTap () {

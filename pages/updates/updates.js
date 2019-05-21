@@ -1,4 +1,4 @@
-// pages/updates/updates.js
+//// pages/updates/updates.js
 var that
 var app = getApp()
 const util = require('../../utils/util')
