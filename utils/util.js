@@ -58,7 +58,9 @@ const formatNumber = n => {
 const usingMock = false
 
 //const baseUrl = 'https://www.gxtdlm.cn'
-const baseUrl = 'https://localhost'
+//const baseUrl = 'https://localhost'
+//域名拿去备案，暂时用IP访问
+const baseUrl = 'https://129.204.16.14'
 
 const defaultLoadingOption = {
   title: '加载中',
