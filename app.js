@@ -64,7 +64,7 @@ App({
                 that.globalData.selfUserId = data.userId
               },
               err => {
-                that.globalData.selfUserId = 2213470209
+                //that.globalData.selfUserId = 2213470209
                 console.log('/wechat/wechatUser/queryByOpenId失败', err)
               }
             )
