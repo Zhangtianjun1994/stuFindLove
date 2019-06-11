@@ -1,0 +1,34 @@
+<view class="focus-list">
+  <block wx:for="{{list}}" wx:for-index="index" wx:key="item.id" wx:for-item="item">
+    <!--components/focus-item/focus-item.wxml-->
+    <view class="focus-item" bindtap="">
+      <view class="flexRight">
+        <view class="head-img">
+          <image src="{{imageSrc}}" />
+        </view>
+        <view class="info-wrapper">
+          <view class="gender">{{nickName}} {{gender}}</view>
+          <view class="gender">{{school}}</view>
+        </view>
+      </view>
+      <view class="news">
+        <text class='content'>
+         {{question1}}
+         </text>
+      </view>
+      <view class="row">
+        <view class="distance-left">
+        <image src='../../images/icon/icon-agree.png' style='height:25rpx;width:25rpx'></image>
+        </view>
+        <view class="distance-left">
+        <image src='../../images/icon/icon-message-inactive.png' style='height:25rpx;width:25rpx'></image>
+        </view>
+      </view>
+    </view>
+
+  </block>
+
+  <view class='middle-content' bindtap='publishMessage'>
+  <image src='../../images/icon/icon-publish-message.png' style='height:100rpx;width:100rpx'></image>
+  </view>
+</view>
