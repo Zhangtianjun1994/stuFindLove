@@ -16,7 +16,8 @@
     "pages/agreeMent/agreeMent",
     "pages/cooperate/cooperate",
     "pages/setup/setup",
-    "pages/uploadToCOS/uploadToCOS"
+    "pages/uploadToCOS/uploadToCOS",
+    "pages/community/community"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,6 +41,11 @@
         "pagePath": "pages/list/list",
         "iconPath": "images/icon/icon-filter-inactive.png",
         "selectedIconPath": "images/icon/icon-filter-active.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "iconPath": "images/icon/icon-updates-inactive.png",
+        "selectedIconPath": "images/icon/icon-updates-active.png"
       },
       {
         "pagePath": "pages/message/message",
