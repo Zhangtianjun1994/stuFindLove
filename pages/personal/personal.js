@@ -8,12 +8,9 @@ Page({
   data: {
     imageUrl:'',
     cardList: [{
-      label: '朋友的桃花牌',
+      label: '缘分广场',
       iconImageUrl: '../../images/icon/icon-friend-infos.png',
-      to:'../friends-list/friends-list'
-    }, {
-      label: '为好友发布桃花牌',
-      iconImageUrl: '../../images/icon/icon-friend-publish.png'
+      to:'../list/list'
     }],
     othList: [{
       label: '设置',
@@ -34,7 +31,7 @@ Page({
   handleTap () {
     let userId = getApp().globalData.selfUserId
     wx.navigateTo({
-      url: `../user-info/user-info?userId=${userId}`
+      url: `../user-info-edit/user-info-edit?userId=${userId}`
     })
   },
 

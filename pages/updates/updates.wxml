@@ -1,17 +1,18 @@
 <!--pages/updates/updates.wxml-->
 <view class='page'>
-<view class="{{!firstOpen?'firstOpenOpacity':'firstOpen'}}">
+<view class="firstOpen">
     <image src="../../images/icon/head.png" class="logo"></image>
-    <view class="openTitle">大学生恋爱菌</view>
+    <view class="openTitle">寻找缘分</view>
     <view class="openContent">
-      <view class="detailText">欢迎第 {{userCount}} 位使用大学生恋爱菌</view>
-      <view class="detailText">每日定时更新 用户群体为大学生</view>
-      <view class="detailText">自主发布信息 随时设置是否可见</view>
-      <view class="detailText">注意隐私安全 添加微信谨防诈骗</view>
-      <view class="detailText">脱单 就来大学生恋爱菌</view>
+      <view class="detailText">欢迎第 {{userCount}} 位使用月老在高校</view>
+      <view class="detailText">本应用用户群体为大学生</view>
+      <view class="detailText">提交征友条件 定制化推荐异性朋友</view>
+      <view class="detailText">提交审核后 方可查看对方联系方式</view>
+      <view class="detailText">本平台免费服务</view>
+      <view class="detailText">脱单 就关注月老在高校</view>
     </view>
-    <view class="openButton" bindtap="openNow">
-      <text>立即体验</text>
+    <view class="openButton" bindtap="findLoveNow">
+      <text>定制缘分</text>
     </view>
   </view>
 </view>

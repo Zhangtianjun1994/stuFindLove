@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/list/list",
+    "pages/updates/updates",
     "pages/friends-list/friends-list",
     "pages/my-focus/my-focus",
     "pages/message/message",
     "pages/personal/personal",
     "pages/user-info/user-info",
-    "pages/updates/updates",
     "pages/index/index",
+    "pages/list/list",
     "pages/logs/logs",
     "pages/message-my-focus/message-my-focus",
     "pages/authorize/authorize",
@@ -17,7 +17,8 @@
     "pages/cooperate/cooperate",
     "pages/setup/setup",
     "pages/uploadToCOS/uploadToCOS",
-    "pages/community/community"
+    "pages/search/search",
+    "pages/user-info-edit/user-info-edit"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,21 +37,6 @@
         "pagePath": "pages/updates/updates",
         "iconPath": "images/icon/icon-updates-inactive.png",
         "selectedIconPath": "images/icon/icon-updates-active.png"
-      },
-      {
-        "pagePath": "pages/list/list",
-        "iconPath": "images/icon/icon-filter-inactive.png",
-        "selectedIconPath": "images/icon/icon-filter-active.png"
-      },
-      {
-        "pagePath": "pages/community/community",
-        "iconPath": "images/icon/icon-updates-inactive.png",
-        "selectedIconPath": "images/icon/icon-updates-active.png"
-      },
-      {
-        "pagePath": "pages/message/message",
-        "iconPath": "images/icon/icon-message-inactive.png",
-        "selectedIconPath": "images/icon/icon-message-active.png"
       },
       {
         "pagePath": "pages/personal/personal",
